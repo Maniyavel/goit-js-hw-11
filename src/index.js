@@ -4,7 +4,8 @@ import Notiflix from 'notiflix';
 
 const form=document.querySelector('#search-form');
 const gallery=document.querySelector('.gallery');
-
+const per_page=40;
+let totalPages = 0;
 let nameImages = '';
 let page=1;
 
@@ -31,6 +32,7 @@ async function getImages(nameImages, page){
         })
 
         const respons=await axios.get(`https://pixabay.com/api/?${params}`);
+        totalPages = response.data.totalHits / per_page;
         return respons;
     }
 
