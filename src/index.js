@@ -9,7 +9,7 @@ let nameImages = '';
 let page=1;
 
 form.addEventListener('submit', onSubmit);
-
+loadButton.addEventListener('click', onClick)
 async function getImages(nameImages, page){
     const API_KEY='35973016-00fa5ed31471a0bdacb65a24f';
     
@@ -18,7 +18,7 @@ async function getImages(nameImages, page){
             key: API_KEY,
             q: nameImages,
             image_type: 'photo',
-            orientation: horizontal,
+            orientation: 'horizontal',
             safesearch: true,
             per_page: per_page,
             page: page,
@@ -45,8 +45,21 @@ async function onSubmit(e){
     
     if(data.hits.length===0){
       Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.');
+    }else{createMarkup(arr);
+      Notiflix.Notify.success(
+        `Hooray! We found ${response.data.totalHits} images.`
+      );
     }
 }
+     
+async function onClick(){
+  page+=1;
+const data=await getImages();
+if(!data)return;
+
+}
+
+
 
 function createMarkup(arr){
     return arr
@@ -81,6 +94,4 @@ function createMarkup(arr){
       loadButton.style.display="none";
       Notiflix.Notify.info('We are sorry, but you have reached the end of search results.');
     }else {loadButton.style.display="block";}
-
-
 }
