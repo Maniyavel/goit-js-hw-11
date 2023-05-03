@@ -1,8 +1,9 @@
 import axios from 'axios';
 import Notiflix from 'notiflix';
 
+
 const form=document.querySelector('#search-form');
-const galleryItems=document.querySelector('.gallery');
+const gallery=document.querySelector('.gallery');
 const loadButton=document.querySelector('.load-more');
 let nameImages = '';
 let page=1;
@@ -30,11 +31,21 @@ async function getImages(nameImages, page){
 
 async function onSubmit(e){
     e.preventDefault();
-    if (!evt.target.elements.searchQuery.value) {
-        Notiflix.Notify.failure('Please, enter a search query');
-      } else {
-        addGallerySubmit();
-      }
+    const searchQuery=e.target.searchQuery.value.trim();
+    page=1;
+    gallery.innerHTML='';
+    
+    if (!searchQuery){
+      return;
+    }
+
+    const data=await getImages();
+    
+  
+    
+    if(data.hits.length===0){
+      Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.');
+    }
 }
 
 function createMarkup(arr){
@@ -65,5 +76,11 @@ function createMarkup(arr){
         </div>
       </div>`).join('');
     gallery.insertAdjacentHTML('beforeend', markup);
+
+    if(data.hits.length<40){
+      loadButton.style.display="none";
+      Notiflix.Notify.info('We are sorry, but you have reached the end of search results.');
+    }else {loadButton.style.display="block";}
+
 
 }
