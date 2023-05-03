@@ -7,6 +7,7 @@ const gallery=document.querySelector('.gallery');
 const loadButton=document.querySelector('.load-more');
 let nameImages = '';
 let page=1;
+const per_page = 40;
 
 form.addEventListener('submit', onSubmit);
 loadButton.addEventListener('click', onClick)
