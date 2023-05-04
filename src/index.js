@@ -26,7 +26,7 @@ function createMarkup(images){
       } = image;
       return `<div class="photo-card">
       <a class="photo-link" href="${largeImageURL}>
-      <img class="gallery-img" src="${webformatURL}" alt="${tags}" loading="lazy" width="335px" height="200px"/></a>
+      <img class="photo-img" src="${webformatURL}" alt="${tags}" loading="lazy" width="335px" height="200px"/></a>
       <div class="info">
         <p class="info-item">
           <b>Likes</b>${likes}

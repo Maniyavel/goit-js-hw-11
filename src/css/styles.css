@@ -41,12 +41,10 @@ body {
     list-style: none;
   }
 
-  .gallery-img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 4px;
-    display: block;
+  .photo-img {
+    width: 300px;
+  height: 200px;
+  object-fit: cover;
   }
 
   .photo-card {
