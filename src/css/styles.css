@@ -42,13 +42,7 @@ body {
     margin-top: 100px
   }
 
-  .gallery-img {
-    display: block;
-    object-fit: cover;
-    height: 250px;
-    border-radius: 4px;
-    
-  }
+  
 
   .photo-img {
     width: 300px;
