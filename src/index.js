@@ -15,15 +15,15 @@ let page=1;
 
 function createMarkup(images){
   const images=markup
-  .map((
-      {webformatURL,
+  .map(image=>{
+      const {webformatURL,
       largeImageURL,
       tags,
       likes,
       views,
       comments,
       downloads,
-      }) => `<div class="photo-card">
+      } =image; `<div class="photo-card">
       <a class="photo-link" href="${largeImageURL}>
       <img class="gallery-img" src="${webformatURL}" alt="${tags}" loading="lazy" /></a>
       <div class="info">
@@ -40,7 +40,7 @@ function createMarkup(images){
           <b>Downloads</b>${downloads}
         </p>
       </div>
-    </div>`).join('');
+    </div>`}).join('');
   gallery.insertAdjacentHTML('beforeend', markup);
   simpleLightbox.refresh();
 }
