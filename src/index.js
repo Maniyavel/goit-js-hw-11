@@ -14,7 +14,7 @@ let page=1;
 
 
 function createMarkup(images){
-  const images = markup
+  const markup = images
   .map(image=>{
       const {webformatURL,
       largeImageURL,
