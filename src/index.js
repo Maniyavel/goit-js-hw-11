@@ -81,7 +81,7 @@ button.addEventListener('click', onClick);
 async function onClick(e){
   button.style.display = 'none';
   const images=getImages(query, page, per_page);
-  createMarkup(images,hits);
+  createMarkup(images.hits);
   button.style.display = 'block';
 
   page = page + 1;
