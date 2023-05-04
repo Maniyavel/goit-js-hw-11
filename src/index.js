@@ -14,7 +14,7 @@ let page=1;
 
 
 function createMarkup(images){
-  const images=markup
+  const images = markup
   .map(image=>{
       const {webformatURL,
       largeImageURL,
@@ -23,7 +23,7 @@ function createMarkup(images){
       views,
       comments,
       downloads,
-      } =image;
+      } = image;
       return `<div class="photo-card">
       <a class="photo-link" href="${largeImageURL}>
       <img class="gallery-img" src="${webformatURL}" alt="${tags}" loading="lazy" /></a>
