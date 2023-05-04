@@ -23,7 +23,8 @@ function createMarkup(images){
       views,
       comments,
       downloads,
-      } =image; `<div class="photo-card">
+      } =image;
+      return `<div class="photo-card">
       <a class="photo-link" href="${largeImageURL}>
       <img class="gallery-img" src="${webformatURL}" alt="${tags}" loading="lazy" /></a>
       <div class="info">
