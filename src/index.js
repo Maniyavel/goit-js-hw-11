@@ -24,7 +24,7 @@ function createMarkup(images){
       comments,
       downloads,
 })=>`<div class="photo-card">
-      <a class="photo-link" href="${largeImageURL}>
+      <a class="photo-link" href="${largeImageURL}">
       <img class="photo-img" src="${webformatURL}" alt="${tags}" loading="lazy"/></a>
       <div class="info">
         <p class="info-item">
