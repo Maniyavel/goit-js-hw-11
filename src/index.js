@@ -69,9 +69,11 @@ async function onSubmit(e){
 
     return false;
 
-}else if(!e.target.elements.searchQuery.value){
-  alert('Please enter a request');
 }
+
+if(!e.target.elements.searchQuery.value){
+  alert('Please enter a request');
+}else 
 
 createMarkup(images.hits);
   button.style.display = 'block';
