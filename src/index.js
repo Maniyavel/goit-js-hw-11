@@ -73,7 +73,7 @@ async function onSubmit(e){
 
 if(!e.target.elements.searchQuery.value){
   alert('Please enter a request');
-}else 
+}
 
 createMarkup(images.hits);
   button.style.display = 'block';
