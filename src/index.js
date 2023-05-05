@@ -69,6 +69,8 @@ async function onSubmit(e){
 
     return false;
 
+}else if(!e.target.elements.searchQuery.value){
+  alert('Please enter a request');
 }
 
 createMarkup(images.hits);
