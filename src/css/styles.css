@@ -72,6 +72,10 @@ body {
   .info {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 10px 5px;
+    gap: 10px;
+    text-align: center;
   }
   
   .info-item {
