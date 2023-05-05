@@ -59,8 +59,6 @@ body {
   .photo-link{
     display: flex;
     flex-direction: column;
-    width: calc((100% - 60px) / 4);
-    text-decoration: none;
     color: #000;
     min-height: 144px;
     
