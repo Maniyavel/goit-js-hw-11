@@ -62,6 +62,8 @@ async function onSubmit(e){
   query = elements.searchQuery.value;
   const images = await getImages(query, page, per_page);
 
+  
+
   if (images.hits.length === 0) {
     Notiflix.Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
@@ -79,6 +81,8 @@ createMarkup(images.hits);
   button.style.display = 'block';
   page = page + 1;
 }
+
+
 
 button.addEventListener('click', onClick);
 
