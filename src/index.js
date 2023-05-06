@@ -73,8 +73,8 @@ async function onSubmit(e){
 
 }
 
-if(!e.target.elements.searchQuery.value){
-  alert('Please enter a request');
+if(query===''){
+  return alert('Please enter a request');
 }
 
 createMarkup(images.hits);
